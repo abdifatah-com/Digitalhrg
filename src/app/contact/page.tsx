@@ -299,7 +299,7 @@ export default function ContactForm() {
                  <Checkbox className="text-[#6c6684]" required />
                </div>
                <div className="text-white font-light  md:w-3/4 mb-1">
-                 I agree to Bird&apos; sending marketing communications related
+                 I agree to Digital&apos; sending marketing communications related
                  to Digital Boost
                </div>
              </div>
