@@ -4,6 +4,12 @@ import Link from "next/link";
 import { PiCheckCircleFill } from "react-icons/pi";
 import PricingNavbar from "@/components/pricing-navbar";
 
+export const metadata = {
+  title: "Pricing – Digital Boost Plans & Packages",
+  description:
+    "Affordable digital marketing packages for every business. Monthly plans starting at $29.99 and one-time services like website design and branding.",
+};
+
 const plans = [
   {
     index: 0,

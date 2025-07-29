@@ -38,6 +38,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { PiCheckLight, PiSmiley } from "react-icons/pi";
 import PricingNavbar from "@/components/pricing-navbar";
 
+export const metadata = {
+  title: "Contact Us – Digital Boost",
+  description:
+    "Let’s work together! Reach out to Digital Boost for consultations, service inquiries, or partnership opportunities. Based in Hargeisa, Somaliland.",
+};
+
 const FormSchema = z.object({
   first_name: z.string(),
   last_name: z.string(),

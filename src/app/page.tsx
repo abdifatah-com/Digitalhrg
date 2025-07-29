@@ -12,6 +12,13 @@ import Services from "./services";
 import { useRef } from "react";
 import FAQS from "./faq";
 
+export const metadata = {
+  title: "Digital Boost – Grow Your Business Online",
+  description:
+    "Hargeisa’s leading digital marketing agency. We specialize in SEO, web design, social media management, branding, and growth strategy. Start your free trial today!",
+};
+
+
 export default function Home() {
   const websiteDesignRef = useRef<HTMLDivElement>(null);
   const graphicDesignRef = useRef<HTMLDivElement>(null);
