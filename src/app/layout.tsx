@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Script from "next/script"; // ✅ import Script
 import "./globals.css";
 
-const font = Poppins({
+// Load the Poppins font
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400"],
 });
 
+// SEO Metadata
 export const metadata: Metadata = {
-  title: "Digital Boost | Your Marketing Partner",
-  description: "Grow your brand with expert digital marketing services.",
+  title: "Digital Boost | Elevating Your Brand Online",
+  description:
+    "Digital Boost is a creative digital marketing agency helping businesses grow through SEO, social media strategy, website design, and automation tools.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Google Analytics Script */}
-        <Script
-          strategy="afterInteractive"
+        {/* Google Analytics */}
+        <script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-2BQD8DF6XR"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
+        ></script>
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -39,7 +39,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={font.className}>{children}</body>
+      <body className={poppins.className}>{children}</body>
     </html>
   );
 }
