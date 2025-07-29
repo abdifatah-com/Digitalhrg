@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // Load the Poppins font
@@ -8,7 +9,7 @@ const poppins = Poppins({
   weight: ["400"],
 });
 
-// SEO Metadata
+// SEO metadata
 export const metadata: Metadata = {
   title: "Digital Boost | Elevating Your Brand Online",
   description:
@@ -22,13 +23,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Google Analytics */}
-        <script
-          async
+      <head />
+      <body className={poppins.className}>
+        {/* Google Analytics with next/script */}
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2BQD8DF6XR"
-        ></script>
-        <script
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -38,8 +42,8 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className={poppins.className}>{children}</body>
+        {children}
+      </body>
     </html>
   );
 }
